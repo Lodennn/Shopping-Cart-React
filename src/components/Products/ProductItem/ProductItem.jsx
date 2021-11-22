@@ -15,7 +15,9 @@ class ProductItem extends React.Component {
             <img src={productImage360} alt="360 Img" />
           </div>
         </div>
-        <h2 className={globalProductClasses["product-info__title"]}>
+        <h2
+          className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
+        >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
         </h2>
         <div className={classes["similar-product__data-wrapper"]}>
@@ -77,14 +79,13 @@ class ProductItem extends React.Component {
               </span>
             </li>
           </ul>
-          <div className={globalProductClasses["product-info__rate-value"]}>
-            <span className={classes["product-rate__rate-value--val"]}>
-              4.9
-            </span>{" "}
-            of 5
+          <div
+            className={`${classes["similar-product__rate-value"]} ${globalProductClasses["product-info__rate-value"]}`}
+          >
+            <span>4.2</span> of 5
           </div>
         </div>
-        <div
+        {/* <div
           className={`${classes["similar-product__pickup"]} flex-y-container`}
         >
           <h4 className={classes["similar-product__pickup--label"]}>
@@ -93,6 +94,28 @@ class ProductItem extends React.Component {
           <p className={classes["similar-product__pickup--value"]}>
             Genena Mall
           </p>
+        </div> */}
+        <div
+          className={`${classes["similar-product__pickedup"]} flex-y-container`}
+        >
+          <div
+            className={`${classes["similar-product__pickedup--wrapper"]} flex-y-container`}
+          >
+            <h4 className={classes["similar-product__pickup--label"]}>From:</h4>
+            <p className={classes["similar-product__pickup--value"]}>UK</p>
+          </div>
+          <div
+            className={`${classes["similar-product__pickedup--wrapper"]} flex-y-container`}
+          >
+            <h4 className={classes["similar-product__pickup--label"]}>To:</h4>
+            <p className={classes["similar-product__pickup--value"]}>Egypt</p>
+          </div>
+          <div
+            className={`${classes["similar-product__pickedup--wrapper"]} flex-y-container`}
+          >
+            <h4 className={classes["similar-product__pickup--label"]}>in:</h4>
+            <p className={classes["similar-product__pickup--value"]}>10</p>
+          </div>
         </div>
       </div>
     );

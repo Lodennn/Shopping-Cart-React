@@ -4,6 +4,7 @@
   border: 1px solid $color-gray-light-3;
   padding: 0.8rem;
   grid-area: span 1 / span 1;
+
   &__image {
     background-image: url("../../../images/product-main-image@2x.png");
     background-repeat: no-repeat;
@@ -24,13 +25,28 @@
     display: flex;
     gap: 2rem;
     margin-top: 0.5rem;
+    // OVERRIDE THE GLOBAL PRODUCT STYLE
+    & > p:first-of-type {
+      font-size: $font-size-xs;
+    }
+    & > p:last-of-type {
+      font-size: $font-size-xs;
+      width: 4.5rem;
+      text-align: center;
+    }
   }
   &__product-rate {
     justify-content: center;
     gap: 2rem;
+    // OVERRIDE THE GLOBAL PRODUCT STYLE
+    & svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
   }
+
   &__pickup {
-    margin-top: 1.5rem;
+    margin-top: 1.3rem;
     justify-content: center;
     &--label {
       font-size: $font-size-label;
@@ -41,5 +57,26 @@
       font-size: $font-size-value;
       font-weight: 600;
     }
+  }
+  &__pickedup {
+    margin-top: 1.3rem;
+    justify-content: space-between;
+    &--wrapper {
+      padding-inline: 1rem;
+    }
+  }
+  ////////////////////////////////////
+  // OVERRIDE THE GLOBAL PRODUCT STYLE
+  &__title {
+    font-size: $font-size-xs;
+  }
+  &__price p {
+    font-size: $font-size-md;
+  }
+  &__price span {
+    font-size: $font-size-xs;
+  }
+  &__rate-value {
+    font-size: $font-size-xs;
   }
 }
