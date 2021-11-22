@@ -1,0 +1,28 @@
+@import "../../../../styles/Variables.scss";
+
+.sizes {
+  justify-content: space-between;
+  margin-top: 2rem;
+  &__size {
+    color: $color-secondary;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid $color-gray-light-5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-label;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    &--active {
+      background: $color-gray-light-5;
+      color: $color-gray-dark-5;
+    }
+    &:hover {
+      background: $color-gray-light-5;
+      color: $color-gray-dark-5;
+    }
+  }
+}

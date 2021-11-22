@@ -1,0 +1,22 @@
+@import "../../../../styles/Variables.scss";
+
+.colors {
+  column-gap: 1.6rem;
+  &__color {
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid $color-gray-light-3;
+    border-radius: 50%;
+    background-size: cover;
+    cursor: pointer;
+    &--1 {
+      background-image: url("../../../../images/product-color-1@2x.png");
+    }
+    &--2 {
+      background-image: url("../../../../images/product-color-2@2x.png");
+    }
+    &--active {
+      border: 1px solid $color-secondary;
+    }
+  }
+}

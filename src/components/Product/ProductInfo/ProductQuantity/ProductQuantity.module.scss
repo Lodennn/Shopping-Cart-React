@@ -1,0 +1,26 @@
+@import "../../../../styles/Variables.scss";
+
+.quantity {
+  position: relative;
+  width: 25.2rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: $color-gray-light;
+  border-radius: 100rem;
+  &__controller {
+    width: 3.7rem;
+    height: 3.7rem;
+    border: none;
+    background: $color-primary;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__value {
+    font-weight: 700;
+    font-size: $font-size-default;
+    color: $color-secondary;
+  }
+}

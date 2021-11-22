@@ -1,0 +1,8 @@
+@import "../../styles/Variables.scss";
+
+.product {
+  padding-block: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6.4rem;
+}

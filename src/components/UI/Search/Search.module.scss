@@ -1,0 +1,26 @@
+@import "../../../styles/Variables.scss";
+
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.6rem;
+  }
+  &__input {
+    padding-left: 4.9rem;
+    padding-right: 2rem;
+    border: 0.1rem solid $color-gray-light-4;
+    padding-block: 1rem;
+    width: 35rem;
+    border-radius: 100rem;
+    &::-webkit-input-placeholder {
+      color: $color-black;
+      font-weight: 600;
+      font-size: $font-size-default;
+    }
+  }
+}

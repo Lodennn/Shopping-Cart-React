@@ -1,0 +1,95 @@
+@import "./styles/Variables.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+body {
+  margin: 0;
+  font-family: $font-family-primary, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//////////////////////
+// GLOBALS
+//////////////////////
+
+.container {
+  max-width: 124rem;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.fix-icon {
+  transform: translateY(2px);
+}
+
+.flex-y-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+.separator {
+  border: none;
+  border-bottom: 1px solid $color-gray-light-3;
+  margin-top: 2rem;
+}
+
+.product-info--wrapper {
+  width: 70%;
+}
+
+.btn {
+  width: 25.2rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: $font-size-default;
+  border-radius: 100rem;
+  border: none;
+  font-family: $font-family-primary;
+  cursor: pointer;
+  &--primary {
+    color: $color-black;
+    background-color: $color-primary;
+  }
+  &--secondary {
+    color: $color-white;
+    background-color: $color-secondary;
+  }
+}
+
+.fix-logo-header {
+  .a {
+    fill: $color-black !important;
+    stroke: none;
+  }
+}
+.fix-logo-footer {
+  .a {
+    fill: $color-primary !important;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../../styles/Variables.scss";
+
+.category-navigation {
+  background-color: $color-black;
+  color: $color-white;
+  padding-block: 1.4rem;
+  &__links {
+    justify-content: space-between;
+  }
+  &__link {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    &--offers {
+      color: $color-accent;
+    }
+  }
+}

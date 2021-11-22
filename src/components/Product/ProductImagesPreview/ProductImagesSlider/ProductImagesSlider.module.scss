@@ -1,0 +1,28 @@
+.product-images-slider {
+  position: relative;
+  &__images {
+    display: flex;
+    column-gap: 2rem;
+    margin-block: 1.2rem;
+    padding-inline: 2.5rem;
+    &--image {
+      position: relative;
+    }
+  }
+  &__controllers {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    &--left,
+    &--right {
+      position: absolute;
+    }
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+  }
+}

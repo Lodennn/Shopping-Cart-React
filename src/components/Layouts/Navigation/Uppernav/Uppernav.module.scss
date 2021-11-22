@@ -1,0 +1,45 @@
+@import "../../../../styles/Variables.scss";
+
+.uppernav {
+  background-color: $color-primary-light;
+  padding: 0.8rem;
+  color: $color-black;
+  &__container {
+    justify-content: space-between;
+    & > div,
+    & > ul {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__logo {
+    &--burger {
+      margin-right: 3.2rem;
+    }
+  }
+  &__offer {
+    &--text {
+      font-size: $font-size-xs;
+
+      margin-inline: 1rem;
+    }
+    &--shop {
+      font-weight: 500;
+      color: inherit;
+    }
+  }
+  &__links {
+    gap: 3.2rem;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    &--icon {
+      margin-right: 1rem;
+    }
+    &--text {
+      font-size: $font-size-xs;
+      font-weight: 500;
+    }
+  }
+}
