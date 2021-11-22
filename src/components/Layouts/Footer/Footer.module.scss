@@ -4,8 +4,65 @@
   margin-top: 6.5rem;
   background-color: $color-gray-dark-4;
   padding-block: 5rem;
+  color: $color-white;
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
+  }
+  &__info {
+    position: relative;
+    &--text {
+      margin-top: 3rem;
+    }
+    & > p {
+      font-size: $font-size-default;
+      font-weight: 300;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -5rem;
+      width: 1px;
+      height: 100%;
+      background-color: $color-gray-dark-3;
+    }
+  }
+  &__links {
+    margin-left: 10rem;
+    &--wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 3rem;
+    }
+    &-sitemap {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -3rem;
+        width: 1px;
+        height: 100%;
+        background-color: $color-gray-dark-3;
+      }
+    }
+    &-link {
+      font-size: $font-size-default;
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: 400;
+      }
+    }
+    &-socials {
+      margin-left: 10rem;
+      &--icon {
+        margin-right: 1rem;
+      }
+    }
   }
 }

@@ -54,8 +54,13 @@ ul {
 
 .separator {
   border: none;
-  border-bottom: 1px solid $color-gray-light-3;
   margin-top: 2rem;
+  &--light {
+    border-bottom: 1px solid $color-gray-light-3;
+  }
+  &--dark {
+    border-bottom: 1px solid $color-gray-dark-3;
+  }
 }
 
 .product-info--wrapper {
@@ -92,4 +97,30 @@ ul {
   .a {
     fill: $color-primary !important;
   }
+}
+
+.mt-xs {
+  margin-top: 1rem;
+}
+.mt-sm {
+  margin-top: 2rem;
+}
+.mt-md {
+  margin-top: 3rem;
+}
+.mt-lg {
+  margin-top: 4rem;
+}
+.mt-xl {
+  margin-top: 5rem;
+}
+
+.form-control {
+  position: relative;
+  width: 100%;
+}
+
+.copyright {
+  font-size: $font-size-default;
+  font-weight: 300;
 }

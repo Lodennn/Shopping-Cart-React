@@ -24,15 +24,15 @@ class ProductInfo extends React.Component {
           {/** PRODUCT PRICE */}
           <ProductPrice />
         </div>
-        <hr className="separator" />
+        <hr className="separator separator--light" />
         {/** PRODUCT SIZE */}
         <h2 className={globalProductClasses["product-info__title"]}>Size</h2>
         <ProductSize />
-        <hr className="separator" />
+        <hr className="separator separator--light" />
         {/** PRODUCT COLOR */}
         <h2 className={globalProductClasses["product-info__title"]}>Color</h2>
         <ProductColor />
-        <hr className="separator" />
+        <hr className="separator separator--light" />
         {/** PRODUCT QUANTITY */}
         <h2 className={globalProductClasses["product-info__title"]}>
           Quantity

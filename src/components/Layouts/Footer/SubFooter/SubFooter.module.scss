@@ -1,0 +1,20 @@
+@import "../../../../styles/Variables.scss";
+
+.sub-footer {
+  margin-top: 4rem;
+  justify-content: space-between;
+  &__payments {
+    display: flex;
+    gap: 1rem;
+  }
+  &__payment {
+    height: 4rem;
+    &--img {
+      height: 100%;
+    }
+  }
+  &__poweredby {
+    font-weight: 400;
+    font-size: $font-size-xs;
+  }
+}
