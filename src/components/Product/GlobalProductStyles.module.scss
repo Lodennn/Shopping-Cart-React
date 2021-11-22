@@ -8,6 +8,26 @@
     margin-block: 2rem 1rem;
   }
 
+  &__stars {
+    display: flex;
+    column-gap: 0.5rem;
+    &--star {
+      svg > path {
+        fill: $color-tertiary;
+      }
+      &-active {
+        svg > path {
+          fill: $color-gray-light-2;
+        }
+      }
+    }
+  }
+  &__rate-value {
+    color: $color-black;
+    font-size: $font-size-sm;
+    font-weight: 600;
+  }
+
   &__price {
     font-size: $font-size-xl;
     color: $color-secondary;
@@ -26,26 +46,6 @@
   &__old-price {
     color: $color-gray-dark;
     font-size: $font-size-default;
-    font-weight: 600;
-  }
-
-  &__stars {
-    display: flex;
-    column-gap: 0.5rem;
-    &--star {
-      svg > path {
-        fill: $color-tertiary;
-      }
-      &-active {
-        svg > path {
-          fill: $color-gray-light-2;
-        }
-      }
-    }
-  }
-  &__rate-value {
-    color: $color-black;
-    font-size: $font-size-sm;
     font-weight: 600;
   }
 }
