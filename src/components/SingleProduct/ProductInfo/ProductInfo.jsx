@@ -8,8 +8,6 @@ import ProductColor from "./ProductColor/ProductColor";
 import ProductQuantity from "./ProductQuantity/ProductQuantity";
 import globalProductClasses from "../GlobalProductStyles.module.scss";
 
-console.log(globalProductClasses);
-
 class ProductInfo extends React.Component {
   render() {
     return (

@@ -1,0 +1,14 @@
+@import "../../styles/Variables.scss";
+
+.similar-products {
+  &__title {
+    color: $color-secondary;
+    font-size: $font-size-lg;
+    font-weight: 600;
+  }
+  &__description {
+    color: $color-gray-dark-3;
+    font-size: $font-size-md-2;
+    font-weight: 300;
+  }
+}

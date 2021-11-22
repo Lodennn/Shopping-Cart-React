@@ -1,0 +1,11 @@
+@import "../../../styles/Variables.scss";
+
+.footer {
+  margin-top: 6.5rem;
+  background-color: $color-gray-dark-4;
+  padding-block: 5rem;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}

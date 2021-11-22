@@ -1,7 +1,9 @@
 import { Fragment } from "react";
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 import Navigation from "./components/Layouts/Navigation/Navigation";
-import Product from "./components/Product/Product";
+import Product from "./components/SingleProduct/SingleProduct";
+import SimilarProducts from "./components/SimilarProducts/SimilarProducts";
+import Footer from "./components/Layouts/Footer/Footer";
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Navigation />
       <Breadcrumb />
       <Product />
+      <SimilarProducts />
+      <Footer />
     </Fragment>
   );
 }

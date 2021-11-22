@@ -1,0 +1,45 @@
+@import "../../../styles/Variables.scss";
+
+.similar-product {
+  border: 1px solid $color-gray-light-3;
+  padding: 0.8rem;
+  grid-area: span 1 / span 1;
+  &__image {
+    background-image: url("../../../images/product-main-image@2x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 25.4rem;
+    position: relative;
+  }
+  &__data-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+  }
+  &__category-logo {
+    transform: translateY(-1rem);
+  }
+  &__price--old {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+  }
+  &__product-rate {
+    justify-content: center;
+    gap: 2rem;
+  }
+  &__pickup {
+    margin-top: 1.5rem;
+    justify-content: center;
+    &--label {
+      font-size: $font-size-label;
+      margin-right: 0.5rem;
+      font-weight: 500;
+    }
+    &--value {
+      font-size: $font-size-value;
+      font-weight: 600;
+    }
+  }
+}

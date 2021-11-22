@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./Product.module.scss";
 import ProductImagesPreview from "./ProductImagesPreview/ProductImagesPreview";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import classes from "./SingleProduct.module.scss";
 
 class Product extends React.Component {
   render() {
