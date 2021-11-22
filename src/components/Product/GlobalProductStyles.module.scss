@@ -32,6 +32,16 @@
     font-size: $font-size-xl;
     color: $color-secondary;
     font-weight: 600;
+    &--currency {
+      font-variant: small-caps;
+      font-size: $font-size-md;
+    }
+  }
+
+  &__old-price {
+    color: $color-gray-dark;
+    font-size: $font-size-default;
+    font-weight: 600;
   }
 
   &__discount {
@@ -41,12 +51,6 @@
     font-size: $font-size-xs;
     color: $color-black;
     font-weight: 400;
-  }
-
-  &__old-price {
-    color: $color-gray-dark;
-    font-size: $font-size-default;
-    font-weight: 600;
   }
 }
 

@@ -4,26 +4,4 @@
   justify-content: space-between;
   width: 80%;
   margin-top: 2rem;
-  &__main {
-    font-size: $font-size-xl;
-    color: $color-secondary;
-    font-weight: 600;
-    &--currency {
-      font-variant: small-caps;
-      font-size: $font-size-md;
-    }
-  }
-  &__old {
-    color: $color-gray-dark;
-    font-size: $font-size-default;
-    font-weight: 600;
-  }
-  &__discount {
-    background: $color-primary;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-size: $font-size-xs;
-    color: $color-black;
-    font-weight: 400;
-  }
 }
