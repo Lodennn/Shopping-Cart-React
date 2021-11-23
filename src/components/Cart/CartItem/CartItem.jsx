@@ -8,13 +8,17 @@ class CartItem extends React.Component {
     return (
       <div className={`${classes["cart-item"]} flex-y-container`}>
         <div className={classes["cart-item__image"]}>
-          <img src={cartItemImage} alt="cart img" className="img-fluid" />
+          <img
+            src={this.props.cartProduct.image}
+            alt="cart img"
+            className="img-fluid"
+          />
         </div>
         <div className={classes["cart-item__data"]}>
           <h2
             className={`${globalProductClasses["product-info__title"]} ${classes["cart-item__data--title"]}`}
           >
-            Lorem ipsum dolor sit amet, consecte adipiscing elit.
+            {this.props.cartProduct.title}
           </h2>
           <div
             className={`${classes["cart-item__data--quantity"]} flex-y-container`}
@@ -23,7 +27,7 @@ class CartItem extends React.Component {
               Quantity
             </span>
             <span className={classes["cart-item__data--quantity--value"]}>
-              1
+              {this.props.cartProduct.quantity}
             </span>
           </div>
           <div
@@ -32,7 +36,7 @@ class CartItem extends React.Component {
             <p
               className={`${globalProductClasses["product-info__price"]} ${classes["cart-item__data--price"]}`}
             >
-              9,999{" "}
+              {this.props.cartProduct.price}{" "}
               <span
                 className={
                   globalProductClasses["product-info__price--currency"]

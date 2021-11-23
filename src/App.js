@@ -14,6 +14,7 @@ class App extends React.Component {
       isLoading: true,
       showCart: false,
       cart: [],
+      updatedItems: [],
     };
   }
 
@@ -30,9 +31,7 @@ class App extends React.Component {
     this.setState({ showCart: true });
   }
 
-  getAddedProductToCart(product) {
-    console.log("CLICKED", product);
-    let updatedItems = [];
+  getAddedProductToCart(product, quantity) {
     if (this.isProductExistsInCart(product)) {
       const updatedProductIndex = this.state.cart.findIndex(
         (cartProduct) => cartProduct.id === product.id
@@ -40,14 +39,15 @@ class App extends React.Component {
       const updatedCart = [...this.state.cart];
       updatedCart[updatedProductIndex] = {
         ...product,
-        quantity: updatedCart[updatedProductIndex].quantity + 1,
+        quantity: updatedCart[updatedProductIndex].quantity + quantity,
       };
-      updatedItems = updatedCart;
+      this.setState({ cart: updatedCart });
     } else {
-      const newCartProduct = { ...product, quantity: 1 };
-      updatedItems.push(newCartProduct);
+      const newCartProduct = { ...product, quantity: quantity };
+      this.setState((prevState) => {
+        return { cart: [newCartProduct, ...prevState.cart] };
+      });
     }
-    this.setState({ cart: updatedItems });
   }
 
   isProductExistsInCart(cartProduct) {
@@ -66,7 +66,10 @@ class App extends React.Component {
         )}
 
         {/** NAVIGATION COMPONENT */}
-        <Navigation onShowCartModal={this.showCartModal.bind(this)} />
+        <Navigation
+          onShowCartModal={this.showCartModal.bind(this)}
+          cartLength={this.state.cart.length}
+        />
 
         {/** ROUTING */}
         <Switch>

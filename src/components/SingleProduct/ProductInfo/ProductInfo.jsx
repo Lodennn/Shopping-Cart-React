@@ -9,8 +9,24 @@ import ProductQuantity from "./ProductQuantity/ProductQuantity";
 import globalProductClasses from "../GlobalProductStyles.module.scss";
 
 class ProductInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addProductToCart = this.addProductToCart.bind(this);
+    this.state = {
+      productQuantity: 1,
+    };
+  }
+  addProductToCart() {
+    this.props.getAddedProductToCart(
+      this.props.singleProduct,
+      +this.state.productQuantity
+    );
+  }
+  getProductQuantity(quantity) {
+    this.setState({ productQuantity: quantity });
+  }
   render() {
-    const { id, title, price } = this.props.singleProduct;
+    const { title, price } = this.props.singleProduct;
     return (
       <div className={classes["product-info"]}>
         <div className="product-info--wrapper">
@@ -38,12 +54,16 @@ class ProductInfo extends React.Component {
           Quantity
         </h2>
         <ProductQuantity
-          product={this.props.singleProduct}
-          getAddedProductToCart={this.props.getAddedProductToCart}
+          getProductQuantity={this.getProductQuantity.bind(this)}
         />
         {/** PRODUCT CTAs */}
         <div className={classes["product-info__ctas"]}>
-          <button className="btn btn--secondary">Add To Cart</button>
+          <button
+            className="btn btn--secondary"
+            onClick={this.addProductToCart}
+          >
+            Add To Cart
+          </button>
           <button className="btn btn--primary">Pickup From Store</button>
         </div>
       </div>

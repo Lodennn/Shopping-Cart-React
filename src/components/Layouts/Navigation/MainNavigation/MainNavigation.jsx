@@ -35,7 +35,7 @@ class MainNavigation extends React.Component {
             >
               <CartIcon />
               <span className={classes["main-navigation__cart-icon--counter"]}>
-                0
+                {this.props.cartLength}
               </span>
             </span>
             <span className={classes["main-navigation__link--text"]}>Cart</span>

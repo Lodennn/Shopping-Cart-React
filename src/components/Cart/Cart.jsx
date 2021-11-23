@@ -16,13 +16,12 @@ class Cart extends React.Component {
 
   componentDidMount() {
     const totalAmount = this.props.cart.reduce((acc, cur) => {
-      return +cur.price + acc;
+      return +cur.quantity * +cur.price + acc;
     }, 0);
     this.setState({ cart: this.props.cart, totalAmount: totalAmount });
   }
 
   render() {
-    console.log("Cart: ", this.state);
     return (
       <Modal onHide={this.props.onHide}>
         <div className={classes.cart}>
@@ -36,7 +35,7 @@ class Cart extends React.Component {
           <div className={classes["cart__wrapper"]}>
             {this.state.cart.length > 0 &&
               this.state.cart.map((cartItem) => {
-                return <CartItem key={cartItem.id} />;
+                return <CartItem key={cartItem.id} cartProduct={cartItem} />;
               })}
           </div>
           <div className={classes["cart__data--wrapper"]}>
