@@ -6,7 +6,23 @@ import globalProductClasses from "../SingleProduct/GlobalProductStyles.module.sc
 import CartItem from "./CartItem/CartItem";
 
 class Cart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cart: [],
+      totalAmount: 0,
+    };
+  }
+
+  componentDidMount() {
+    const totalAmount = this.props.cart.reduce((acc, cur) => {
+      return +cur.price + acc;
+    }, 0);
+    this.setState({ cart: this.props.cart, totalAmount: totalAmount });
+  }
+
   render() {
+    console.log("Cart: ", this.state);
     return (
       <Modal onHide={this.props.onHide}>
         <div className={classes.cart}>
@@ -18,13 +34,15 @@ class Cart extends React.Component {
             Cart Summary
           </h4>
           <div className={classes["cart__wrapper"]}>
-            <CartItem />
-            <CartItem />
+            {this.state.cart.length > 0 &&
+              this.state.cart.map((cartItem) => {
+                return <CartItem key={cartItem.id} />;
+              })}
           </div>
           <div className={classes["cart__data--wrapper"]}>
             <div className={classes["cart__total-amount"]}>
               <h3>
-                Total: <span>19,333 LE</span>
+                Total: <span>{this.state.totalAmount} LE</span>
               </h3>
             </div>
             <div className={classes["cart__actions"]}>

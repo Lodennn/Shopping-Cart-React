@@ -13,6 +13,7 @@ class App extends React.Component {
       data: [],
       isLoading: true,
       showCart: false,
+      cart: [],
     };
   }
 
@@ -22,13 +23,44 @@ class App extends React.Component {
     this.setState({ data: data, isLoading: false });
   }
 
+  hideCartModal() {
+    this.setState({ showCart: false });
+  }
+  showCartModal() {
+    this.setState({ showCart: true });
+  }
+
+  getAddedProductToCart(product) {
+    // this.setState({ addedProductToCart: product });
+    console.log("CLICKED", product);
+    if (this.isProductExistsInCart(product)) {
+    } else {
+      this.setState((prevState) => {
+        return {
+          cart: [product, ...prevState.cart],
+        };
+      });
+    }
+  }
+  isProductExistsInCart(cartProduct) {
+    const arrayItemIndex = this.state.cart.findIndex(
+      (product) => product.id === cartProduct.id
+    );
+    return arrayItemIndex >= 0;
+  }
+
   render() {
     return (
       <Fragment>
         {/** CART COMPONENT */}
-        {this.state.showCart && <Cart onHide={this.hideCartModal.bind(this)} />}
-        {/** CART COMPONENT */}
-        <Navigation />
+        {this.state.showCart && (
+          <Cart onHide={this.hideCartModal.bind(this)} cart={this.state.cart} />
+        )}
+
+        {/** NAVIGATION COMPONENT */}
+        <Navigation onShowCartModal={this.showCartModal.bind(this)} />
+
+        {/** ROUTING */}
         <Switch>
           <Route path="/" exact>
             {!this.state.isLoading ? (
@@ -39,12 +71,18 @@ class App extends React.Component {
           </Route>
           <Route path="/products/:productId">
             {this.state.data.length > 0 ? (
-              <SingleProductPage products={this.state.data} />
+              <SingleProductPage
+                products={this.state.data}
+                getAddedProductToCart={this.getAddedProductToCart.bind(this)}
+              />
             ) : (
               <LoadingSpinner />
             )}
           </Route>
         </Switch>
+        {/** ROUTING */}
+
+        {/** FOOTER COMPONENT */}
         <Footer />
       </Fragment>
     );

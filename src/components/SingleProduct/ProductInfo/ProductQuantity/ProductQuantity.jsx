@@ -9,7 +9,7 @@ class ProductQuantity extends React.Component {
     this.addProductToCart = this.addProductToCart.bind(this);
   }
   addProductToCart() {
-    console.log(this.props.product);
+    this.props.getAddedProductToCart(this.props.product);
   }
   render() {
     return (

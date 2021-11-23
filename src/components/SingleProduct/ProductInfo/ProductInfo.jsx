@@ -37,7 +37,10 @@ class ProductInfo extends React.Component {
         <h2 className={globalProductClasses["product-info__title"]}>
           Quantity
         </h2>
-        <ProductQuantity product={this.props.singleProduct} />
+        <ProductQuantity
+          product={this.props.singleProduct}
+          getAddedProductToCart={this.props.getAddedProductToCart}
+        />
         {/** PRODUCT CTAs */}
         <div className={classes["product-info__ctas"]}>
           <button className="btn btn--secondary">Add To Cart</button>

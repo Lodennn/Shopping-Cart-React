@@ -8,7 +8,7 @@ class Navigation extends React.Component {
     return (
       <Fragment>
         <Uppernav />
-        <MainNavigation />
+        <MainNavigation onShowCartModal={this.props.onShowCartModal} />
         <CategoryNavigation />
       </Fragment>
     );

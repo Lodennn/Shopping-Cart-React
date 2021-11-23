@@ -8,7 +8,10 @@ class SingleProductPage extends React.Component {
     return (
       <Fragment>
         <Breadcrumb />
-        <SingleProduct products={this.props.products} />
+        <SingleProduct
+          products={this.props.products}
+          getAddedProductToCart={this.props.getAddedProductToCart}
+        />
         <SimilarProducts products={this.props.products} />
       </Fragment>
     );

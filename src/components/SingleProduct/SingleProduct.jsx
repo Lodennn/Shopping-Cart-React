@@ -36,7 +36,10 @@ class Product extends React.Component {
           <ProductImagesPreview singleProduct={this.state.singleProduct} />
         )}
         {this.state.singleProduct.id && (
-          <ProductInfo singleProduct={this.state.singleProduct} />
+          <ProductInfo
+            singleProduct={this.state.singleProduct}
+            getAddedProductToCart={this.props.getAddedProductToCart}
+          />
         )}
       </div>
     );

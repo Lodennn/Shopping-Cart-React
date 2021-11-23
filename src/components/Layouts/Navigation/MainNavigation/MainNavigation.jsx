@@ -5,8 +5,6 @@ import { ReactComponent as CartIcon } from "../../../../images/icon-cart.svg";
 import { ReactComponent as HeartIcon } from "../../../../images/icon-heart.svg";
 import { ReactComponent as UserIcon } from "../../../../images/icon-user.svg";
 import classes from "./MainNavigation.module.scss";
-import Modal from "../../../UI/Modal/Modal";
-import Cart from "../../../Cart/Cart";
 
 class MainNavigation extends React.Component {
   constructor(props) {
@@ -15,15 +13,6 @@ class MainNavigation extends React.Component {
     this.state = {
       showModal: false,
     };
-  }
-
-  showCartModal() {
-    this.setState({ showModal: true });
-    console.log("SHOW MODAL");
-  }
-  hideCartModal() {
-    this.setState({ showModal: false });
-    console.log("HIDE MODAL");
   }
 
   render() {
@@ -39,7 +28,7 @@ class MainNavigation extends React.Component {
         <ul className={`${classes["main-navigation__links"]} flex-y-container`}>
           <li
             className={`${classes["main-navigation__link"]}  flex-y-container`}
-            onClick={this.showCartModal.bind(this)}
+            onClick={this.props.onShowCartModal}
           >
             <span
               className={`${classes["main-navigation__link--icon"]} ${classes["main-navigation__cart-icon"]} icon`}
