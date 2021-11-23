@@ -1,0 +1,40 @@
+@import "../../../styles/Variables.scss";
+
+.cart-item {
+  gap: 1.5rem;
+  border: 1px solid $color-gray-light-3;
+  border-radius: 3px;
+  padding: 0.8rem;
+  margin-top: 2rem;
+  &__image {
+    height: 100%;
+  }
+  &__data {
+    &--title {
+      font-size: $font-size-xs;
+      margin-top: 0;
+    }
+    &--quantity {
+      font-weight: 600;
+
+      &--label {
+        font-size: $font-size-label;
+        margin-right: 0.5rem;
+      }
+      &--value {
+        font-size: $font-size-value;
+      }
+    }
+    &--wrapper {
+      justify-content: space-between;
+    }
+    &--price {
+      font-size: $font-size-md;
+    }
+  }
+  &__btn-remove {
+    font-size: $font-size-label;
+    width: 8rem;
+    margin-right: 0.8rem;
+  }
+}

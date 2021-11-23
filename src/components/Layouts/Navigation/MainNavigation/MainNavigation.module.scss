@@ -16,10 +16,12 @@
       margin-right: 0.8rem;
     }
     &--text {
+      cursor: pointer;
     }
   }
   &__cart-icon {
     position: relative;
+    cursor: pointer;
     &--counter {
       position: absolute;
       top: -0.4rem;

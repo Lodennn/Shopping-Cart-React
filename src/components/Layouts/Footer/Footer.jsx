@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Subscribe from "../../Subscribe/Subscribe";
+import Subscribe from "../../UI/Subscribe/Subscribe";
 import MainLogo from "../../UI/Logo/MainLogo";
 import classes from "./Footer.module.scss";
 import { ReactComponent as Facebook } from "../../../images/icon-facebook.svg";

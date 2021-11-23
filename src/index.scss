@@ -124,3 +124,13 @@ ul {
   font-size: $font-size-default;
   font-weight: 300;
 }
+
+.title--secondary {
+  color: $color-secondary;
+  font-size: $font-size-lg;
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}

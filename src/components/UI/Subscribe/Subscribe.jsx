@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Subscribe.module.scss";
-import { ReactComponent as SubmitIcon } from "../../images/icon-submit.svg";
+import { ReactComponent as SubmitIcon } from "../../../images/icon-submit.svg";
 
 class Subscribe extends React.Component {
   render() {

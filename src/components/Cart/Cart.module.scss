@@ -1,0 +1,36 @@
+@import "../../styles/Variables.scss";
+
+.cart {
+  padding-block: 5.5rem;
+  padding-inline: 3.2rem;
+  position: relative;
+  &__close {
+    position: absolute;
+    top: 5.5rem;
+    right: 3.2rem;
+    cursor: pointer;
+  }
+  &__wrapper {
+    margin-top: 2.6rem;
+    max-height: 60vh;
+    overflow-y: scroll;
+  }
+  &__data--wrapper {
+    padding-block: 1.5rem;
+  }
+  &__total-amount {
+    text-align: center;
+    font-weight: 600;
+    font-size: $font-size-md-2;
+    margin-bottom: 1.5rem;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    & > button {
+      width: 19.6rem;
+      font-weight: 600;
+      font-size: $font-size-value;
+    }
+  }
+}
