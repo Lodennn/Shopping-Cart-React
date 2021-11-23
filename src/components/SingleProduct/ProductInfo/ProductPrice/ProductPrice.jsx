@@ -7,7 +7,7 @@ class ProductPrice extends React.Component {
     return (
       <div className={`${classes["product-price"]} flex-y-container`}>
         <p className={globalProductClasses["product-info__price"]}>
-          9,999{" "}
+          {this.props.productPrice}{" "}
           <span
             className={globalProductClasses["product-info__price--currency"]}
           >

@@ -4,9 +4,10 @@ import ProductImagesSlider from "./ProductImagesSlider/ProductImagesSlider";
 
 class ProductImagesPreview extends React.Component {
   render() {
+    const { image } = this.props.singleProduct;
     return (
       <div>
-        <ProductMainImage />
+        <ProductMainImage productImage={image} />
         <ProductImagesSlider />
       </div>
     );

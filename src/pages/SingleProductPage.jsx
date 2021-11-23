@@ -5,11 +5,10 @@ import SingleProduct from "../components/SingleProduct/SingleProduct";
 
 class SingleProductPage extends React.Component {
   render() {
-    console.log("SingleProductPage.js");
     return (
       <Fragment>
         <Breadcrumb />
-        <SingleProduct />
+        <SingleProduct products={this.props.products} />
         <SimilarProducts products={this.props.products} />
       </Fragment>
     );

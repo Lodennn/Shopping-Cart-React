@@ -72,6 +72,8 @@
   // OVERRIDE THE GLOBAL PRODUCT STYLE
   &__title {
     font-size: $font-size-xs;
+    height: 3rem;
+    text-overflow: ellipsis;
   }
   &__price p {
     font-size: $font-size-md;

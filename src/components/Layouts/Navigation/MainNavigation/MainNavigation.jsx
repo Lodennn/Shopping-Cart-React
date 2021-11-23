@@ -75,9 +75,9 @@ class MainNavigation extends React.Component {
           </li>
         </ul>
         {/** CART COMPONENT */}
-        {this.state.showModal && (
+        {/* {this.state.showModal && (
           <Cart onHide={this.hideCartModal.bind(this)} />
-        )}
+        )} */}
         {/** CART COMPONENT */}
       </div>
     );

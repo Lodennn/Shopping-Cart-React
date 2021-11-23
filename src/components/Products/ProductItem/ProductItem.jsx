@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 
 class ProductItem extends React.Component {
   render() {
+    const productTitle =
+      this.props.product.title.length <= 50
+        ? this.props.product.title
+        : `${this.props.product.title.substring(0, 50)}..`;
+
     return (
       <div className={classes["similar-product"]}>
         <div className={classes["similar-product__image"]}>
@@ -25,7 +30,7 @@ class ProductItem extends React.Component {
           <h2
             className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
           >
-            {this.props.product.title}
+            {productTitle}
           </h2>
         </Link>
         <div className={classes["similar-product__data-wrapper"]}>
@@ -93,7 +98,7 @@ class ProductItem extends React.Component {
             <span>4.2</span> of 5
           </div>
         </div>
-        {/* <div
+        <div
           className={`${classes["similar-product__pickup"]} flex-y-container`}
         >
           <h4 className={classes["similar-product__pickup--label"]}>
@@ -102,8 +107,8 @@ class ProductItem extends React.Component {
           <p className={classes["similar-product__pickup--value"]}>
             Genena Mall
           </p>
-        </div> */}
-        <div
+        </div>
+        {/* <div
           className={`${classes["similar-product__pickedup"]} flex-y-container`}
         >
           <div
@@ -124,7 +129,7 @@ class ProductItem extends React.Component {
             <h4 className={classes["similar-product__pickup--label"]}>in:</h4>
             <p className={classes["similar-product__pickup--value"]}>10</p>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
