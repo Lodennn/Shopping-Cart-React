@@ -3,7 +3,7 @@ import classes from "./SubFooter.module.scss";
 import visaImage from "../../../../images/visa.png";
 import masterCardImage from "../../../../images/master-card.png";
 import cashImage from "../../../../images/cash-delivery.png";
-import { ReactComponent as NasNavLogo } from "../../../../images/logo-nasnav.svg";
+import NasNavLogo from "../../../../images/FIX_IMAGES/nasnav-logo.png";
 
 class SubFooter extends React.Component {
   render() {
@@ -33,12 +33,16 @@ class SubFooter extends React.Component {
             />
           </li>
         </ul>
-        <div className={classes["sub-footer__poweredby"]}>
+        <div className={`${classes["sub-footer__poweredby"]} flex-y-container`}>
           <span className={classes["sub-footer__powereby--text"]}>
             Powered By
           </span>
           <span className={classes["sub-footer__powereby--img"]}>
-            <NasNavLogo />
+            <img
+              src={NasNavLogo}
+              alt="Nasnav Logo"
+              className="img-fluid fix-icon"
+            />
           </span>
         </div>
       </div>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Subscribe from "../../UI/Subscribe/Subscribe";
 import MainLogo from "../../UI/Logo/MainLogo";
 import classes from "./Footer.module.scss";
-import { ReactComponent as Facebook } from "../../../images/icon-facebook.svg";
-import { ReactComponent as Linked } from "../../../images/icon-linkedin.svg";
-import { ReactComponent as Insta } from "../../../images/icon-instagram.svg";
-import { ReactComponent as Twitter } from "../../../images/icon-twitter.svg";
+import { ReactComponent as Linkedicon } from "../../../images/icon-linkedin.svg";
+import facebookIcon from "../../../images/FIX_IMAGES/facebook-img.png";
+import twitterIcon from "../../../images/FIX_IMAGES/twitter-img.png";
+import instagramIcon from "../../../images/FIX_IMAGES/instagram-img.png";
 import SubFooter from "./SubFooter/SubFooter";
 
 class Footer extends React.Component {
@@ -68,7 +68,11 @@ class Footer extends React.Component {
                 <li className={classes["footer__links-link"]}>
                   <Link to="/" className="flex-y-container">
                     <span className={classes["footer__links-socials--icon"]}>
-                      <Facebook />
+                      <img
+                        src={facebookIcon}
+                        alt="facebook"
+                        className="img-fluid"
+                      />
                     </span>
                     <span className={classes["footer__links-socials--text"]}>
                       /YESHTERY
@@ -78,7 +82,7 @@ class Footer extends React.Component {
                 <li className={classes["footer__links-link"]}>
                   <Link to="/" className="flex-y-container">
                     <span className={classes["footer__links-socials--icon"]}>
-                      <Linked />
+                      <Linkedicon />
                     </span>
                     <span className={classes["footer__links-socials--text"]}>
                       /YESHTERY
@@ -88,7 +92,11 @@ class Footer extends React.Component {
                 <li className={classes["footer__links-link"]}>
                   <Link to="/" className="flex-y-container">
                     <span className={classes["footer__links-socials--icon"]}>
-                      <Insta />
+                      <img
+                        src={instagramIcon}
+                        alt="facebook"
+                        className="img-fluid"
+                      />
                     </span>
                     <span className={classes["footer__links-socials--text"]}>
                       /YESHTERY
@@ -98,7 +106,11 @@ class Footer extends React.Component {
                 <li className={classes["footer__links-link"]}>
                   <Link to="/" className="flex-y-container">
                     <span className={classes["footer__links-socials--icon"]}>
-                      <Twitter />
+                      <img
+                        src={twitterIcon}
+                        alt="facebook"
+                        className="img-fluid"
+                      />
                     </span>
                     <span className={classes["footer__links-socials--text"]}>
                       /YESHTERY
