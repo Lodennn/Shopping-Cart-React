@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Navigation from "./components/Layouts/Navigation/Navigation";
 import Footer from "./components/Layouts/Footer/Footer";
 import SingleProductPage from "./pages/SingleProductPage";
 import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
-import Cart from "./components/Cart/Cart";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+// import Cart from "./components/Cart/Cart";
+
+const Cart = React.lazy(() => import("./components/Cart/Cart"));
 
 class App extends React.Component {
   constructor(props) {
@@ -100,45 +102,47 @@ class App extends React.Component {
     return (
       <Fragment>
         <ScrollToTop />
-        {/** CART COMPONENT */}
-        {this.state.showCart && (
-          <Cart
-            onHide={this.hideCartModal.bind(this)}
-            cart={this.state.cart}
-            removeProductFromCart={this.removeProductFromCart.bind(this)}
+        <Suspense fallback={<LoadingSpinner />}>
+          {/** CART COMPONENT */}
+          {this.state.showCart && (
+            <Cart
+              onHide={this.hideCartModal.bind(this)}
+              cart={this.state.cart}
+              removeProductFromCart={this.removeProductFromCart.bind(this)}
+            />
+          )}
+
+          {/** NAVIGATION COMPONENT */}
+          <Navigation
+            onShowCartModal={this.showCartModal.bind(this)}
+            cartLength={this.state.cart.length}
           />
-        )}
 
-        {/** NAVIGATION COMPONENT */}
-        <Navigation
-          onShowCartModal={this.showCartModal.bind(this)}
-          cartLength={this.state.cart.length}
-        />
+          {/** ROUTING */}
+          <Switch>
+            <Route path="/" exact>
+              {!this.state.isLoading ? (
+                <Redirect to={`/products/${this.state.data[0].id}`} />
+              ) : (
+                <LoadingSpinner />
+              )}
+            </Route>
+            <Route path="/products/:productId">
+              {this.state.data.length > 0 ? (
+                <SingleProductPage
+                  products={this.state.data}
+                  getAddedProductToCart={this.getAddedProductToCart.bind(this)}
+                />
+              ) : (
+                <LoadingSpinner />
+              )}
+            </Route>
+          </Switch>
+          {/** ROUTING */}
 
-        {/** ROUTING */}
-        <Switch>
-          <Route path="/" exact>
-            {!this.state.isLoading ? (
-              <Redirect to={`/products/${this.state.data[0].id}`} />
-            ) : (
-              <LoadingSpinner />
-            )}
-          </Route>
-          <Route path="/products/:productId">
-            {this.state.data.length > 0 ? (
-              <SingleProductPage
-                products={this.state.data}
-                getAddedProductToCart={this.getAddedProductToCart.bind(this)}
-              />
-            ) : (
-              <LoadingSpinner />
-            )}
-          </Route>
-        </Switch>
-        {/** ROUTING */}
-
-        {/** FOOTER COMPONENT */}
-        <Footer />
+          {/** FOOTER COMPONENT */}
+          <Footer />
+        </Suspense>
       </Fragment>
     );
   }

@@ -4,11 +4,13 @@ import classes from "./LoadingSpinner.module.scss";
 class LoadingSpinner extends React.Component {
   render() {
     return (
-      <div className={classes["lds-ring"]}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className={classes["lds-wrapper"]}>
+        <div className={classes["lds-ring"]}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     );
   }
