@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./CartItem.module.scss";
 import globalProductClasses from "../../SingleProduct/GlobalProductStyles.module.scss";
-import cartItemImage from "../../../images/product-main-image.png";
 
 class CartItem extends React.Component {
   render() {
@@ -47,6 +46,9 @@ class CartItem extends React.Component {
             </p>
             <button
               className={`${classes["cart-item__btn-remove"]} btn btn--primary`}
+              onClick={() =>
+                this.props.removeProductFromCart(this.props.cartProduct)
+              }
             >
               Remove
             </button>

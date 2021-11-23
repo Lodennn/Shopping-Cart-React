@@ -33,20 +33,9 @@ class App extends React.Component {
 
   getAddedProductToCart(product, quantity) {
     if (this.isProductExistsInCart(product)) {
-      const updatedProductIndex = this.state.cart.findIndex(
-        (cartProduct) => cartProduct.id === product.id
-      );
-      const updatedCart = [...this.state.cart];
-      updatedCart[updatedProductIndex] = {
-        ...product,
-        quantity: updatedCart[updatedProductIndex].quantity + quantity,
-      };
-      this.setState({ cart: updatedCart });
+      this.updateExistedProductInCart(product, quantity);
     } else {
-      const newCartProduct = { ...product, quantity: quantity };
-      this.setState((prevState) => {
-        return { cart: [newCartProduct, ...prevState.cart] };
-      });
+      this.addNewProductToCart(product, quantity);
     }
   }
 
@@ -57,12 +46,65 @@ class App extends React.Component {
     return arrayItemIndex >= 0;
   }
 
+  updateExistedProductInCart(product, quantity) {
+    const updatedProductIndex = this.state.cart.findIndex(
+      (cartProduct) => cartProduct.id === product.id
+    );
+    const updatedCart = [...this.state.cart];
+
+    updatedCart[updatedProductIndex] = {
+      ...product,
+      quantity: updatedCart[updatedProductIndex].quantity + quantity,
+    };
+
+    this.setState({ cart: updatedCart });
+  }
+
+  addNewProductToCart(product, quantity) {
+    const newCartProduct = { ...product, quantity: quantity };
+    this.setState((prevState) => {
+      return { cart: [newCartProduct, ...prevState.cart] };
+    });
+  }
+
+  removeProductFromCart(product) {
+    console.log("REMOVE");
+    const updatedProductIndex = this.state.cart.findIndex(
+      (cartProduct) => cartProduct.id === product.id
+    );
+    const updatedCart = [...this.state.cart];
+
+    if (this.checkIfLastItem(updatedCart[updatedProductIndex])) {
+      this.setState((prevState) => {
+        return {
+          cart: prevState.cart.filter(
+            (cartItem) => cartItem.id !== updatedCart[updatedProductIndex].id
+          ),
+        };
+      });
+    } else {
+      updatedCart[updatedProductIndex] = {
+        ...product,
+        quantity: updatedCart[updatedProductIndex].quantity - 1,
+      };
+      this.setState({ cart: updatedCart });
+    }
+  }
+
+  checkIfLastItem(product) {
+    return product.quantity === 1;
+  }
+
   render() {
     return (
       <Fragment>
         {/** CART COMPONENT */}
         {this.state.showCart && (
-          <Cart onHide={this.hideCartModal.bind(this)} cart={this.state.cart} />
+          <Cart
+            onHide={this.hideCartModal.bind(this)}
+            cart={this.state.cart}
+            removeProductFromCart={this.removeProductFromCart.bind(this)}
+          />
         )}
 
         {/** NAVIGATION COMPONENT */}
