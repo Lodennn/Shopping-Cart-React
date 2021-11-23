@@ -31,17 +31,25 @@ class App extends React.Component {
   }
 
   getAddedProductToCart(product) {
-    // this.setState({ addedProductToCart: product });
     console.log("CLICKED", product);
+    let updatedItems = [];
     if (this.isProductExistsInCart(product)) {
+      const updatedProductIndex = this.state.cart.findIndex(
+        (cartProduct) => cartProduct.id === product.id
+      );
+      const updatedCart = [...this.state.cart];
+      updatedCart[updatedProductIndex] = {
+        ...product,
+        quantity: updatedCart[updatedProductIndex].quantity + 1,
+      };
+      updatedItems = updatedCart;
     } else {
-      this.setState((prevState) => {
-        return {
-          cart: [product, ...prevState.cart],
-        };
-      });
+      const newCartProduct = { ...product, quantity: 1 };
+      updatedItems.push(newCartProduct);
     }
+    this.setState({ cart: updatedItems });
   }
+
   isProductExistsInCart(cartProduct) {
     const arrayItemIndex = this.state.cart.findIndex(
       (product) => product.id === cartProduct.id
