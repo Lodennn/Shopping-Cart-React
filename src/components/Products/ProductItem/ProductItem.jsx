@@ -30,88 +30,99 @@ class ProductItem extends React.Component {
           </div>
         </div>
         <Link to={`/products/${this.props.product.id}`}>
-          <h2
-            className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
-          >
-            {productTitle}
-          </h2>
-        </Link>
-        <div className={classes["similar-product__data-wrapper"]}>
-          <div className={classes["similar-product__price"]}>
-            <p className={globalProductClasses["product-info__price"]}>
-              {formatPrice(this.props.product.price)}{" "}
-              <span
-                className={
-                  globalProductClasses["product-info__price--currency"]
-                }
-              >
-                LE
-              </span>
-            </p>
-            <div
-              className={`${classes["similar-product__price--old"]} flex-y-container`}
+          <div className={classes["similar-product__link"]}>
+            <h2
+              className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
             >
-              <p className={globalProductClasses["product-info__old-price"]}>
-                <del>{formatPrice(this.props.product.price)} L.E</del>
-              </p>
-              <p className={globalProductClasses["product-info__discount"]}>
-                50%
+              {productTitle}
+            </h2>
+
+            <div className={classes["similar-product__data-wrapper"]}>
+              <div className={classes["similar-product__price"]}>
+                <p className={globalProductClasses["product-info__price"]}>
+                  {formatPrice(this.props.product.price)}{" "}
+                  <span
+                    className={
+                      globalProductClasses["product-info__price--currency"]
+                    }
+                  >
+                    LE
+                  </span>
+                </p>
+                <div
+                  className={`${classes["similar-product__price--old"]} flex-y-container`}
+                >
+                  <p
+                    className={globalProductClasses["product-info__old-price"]}
+                  >
+                    <del>{formatPrice(this.props.product.price)} L.E</del>
+                  </p>
+                  <p className={globalProductClasses["product-info__discount"]}>
+                    50%
+                  </p>
+                </div>
+              </div>
+              <div className={classes["similar-product__category-logo"]}>
+                <Logo type="small" />
+              </div>
+            </div>
+            <div
+              className={`${classes["similar-product__product-rate"]} flex-y-container`}
+            >
+              <ul className={globalProductClasses["product-info__stars"]}>
+                <li
+                  className={globalProductClasses["product-info__stars--star"]}
+                >
+                  <span className="icon">
+                    <StarFillIcon />
+                  </span>
+                </li>
+                <li
+                  className={globalProductClasses["product-info__stars--star"]}
+                >
+                  <span className="icon">
+                    <StarFillIcon />
+                  </span>
+                </li>
+                <li
+                  className={globalProductClasses["product-info__stars--star"]}
+                >
+                  <span className="icon">
+                    <StarFillIcon />
+                  </span>
+                </li>
+                <li
+                  className={globalProductClasses["product-info__stars--star"]}
+                >
+                  <span className="icon">
+                    <StarFillIcon />
+                  </span>
+                </li>
+                <li
+                  className={`${globalProductClasses["product-info__stars--star"]} ${globalProductClasses["product-info__stars--star-active"]}`}
+                >
+                  <span className="icon">
+                    <StarIcon />
+                  </span>
+                </li>
+              </ul>
+              <div
+                className={`${classes["similar-product__rate-value"]} ${globalProductClasses["product-info__rate-value"]}`}
+              >
+                <span>4.2</span> of 5
+              </div>
+            </div>
+            <div
+              className={`${classes["similar-product__pickup"]} flex-y-container`}
+            >
+              <h4 className={classes["similar-product__pickup--label"]}>
+                Pickup From:
+              </h4>
+              <p className={classes["similar-product__pickup--value"]}>
+                Genena Mall
               </p>
             </div>
-          </div>
-          <div className={classes["similar-product__category-logo"]}>
-            <Logo type="small" />
-          </div>
-        </div>
-        <div
-          className={`${classes["similar-product__product-rate"]} flex-y-container`}
-        >
-          <ul className={globalProductClasses["product-info__stars"]}>
-            <li className={globalProductClasses["product-info__stars--star"]}>
-              <span className="icon">
-                <StarFillIcon />
-              </span>
-            </li>
-            <li className={globalProductClasses["product-info__stars--star"]}>
-              <span className="icon">
-                <StarFillIcon />
-              </span>
-            </li>
-            <li className={globalProductClasses["product-info__stars--star"]}>
-              <span className="icon">
-                <StarFillIcon />
-              </span>
-            </li>
-            <li className={globalProductClasses["product-info__stars--star"]}>
-              <span className="icon">
-                <StarFillIcon />
-              </span>
-            </li>
-            <li
-              className={`${globalProductClasses["product-info__stars--star"]} ${globalProductClasses["product-info__stars--star-active"]}`}
-            >
-              <span className="icon">
-                <StarIcon />
-              </span>
-            </li>
-          </ul>
-          <div
-            className={`${classes["similar-product__rate-value"]} ${globalProductClasses["product-info__rate-value"]}`}
-          >
-            <span>4.2</span> of 5
-          </div>
-        </div>
-        <div
-          className={`${classes["similar-product__pickup"]} flex-y-container`}
-        >
-          <h4 className={classes["similar-product__pickup--label"]}>
-            Pickup From:
-          </h4>
-          <p className={classes["similar-product__pickup--value"]}>
-            Genena Mall
-          </p>
-        </div>
-        {/* <div
+            {/* <div
           className={`${classes["similar-product__pickedup"]} flex-y-container`}
         >
           <div
@@ -133,6 +144,8 @@ class ProductItem extends React.Component {
             <p className={classes["similar-product__pickup--value"]}>10</p>
           </div>
         </div> */}
+          </div>
+        </Link>
       </div>
     );
   }
