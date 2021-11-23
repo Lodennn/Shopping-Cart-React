@@ -6,6 +6,7 @@ import productImage360 from "../../../images/icon-360.svg";
 import { ReactComponent as StarIcon } from "../../../images/icon-star.svg";
 import { ReactComponent as StarFillIcon } from "../../../images/icon-star-fill.svg";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../../../helpers/numbers";
 
 class ProductItem extends React.Component {
   render() {
@@ -22,8 +23,10 @@ class ProductItem extends React.Component {
             alt="similar product img"
             className={`${classes["similar-product__img"]} img-fluid`}
           />
-          <div className={`${globalProductClasses["image-360"]}`}>
-            <img src={productImage360} alt="360 Img" />
+          <div
+            className={`${classes["image-360"]} ${globalProductClasses["image-360"]}`}
+          >
+            <img src={productImage360} alt="360 Img" className="img-fluid" />
           </div>
         </div>
         <Link to={`/products/${this.props.product.id}`}>
@@ -36,20 +39,20 @@ class ProductItem extends React.Component {
         <div className={classes["similar-product__data-wrapper"]}>
           <div className={classes["similar-product__price"]}>
             <p className={globalProductClasses["product-info__price"]}>
-              {this.props.product.price}{" "}
+              {formatPrice(this.props.product.price)}{" "}
               <span
                 className={
                   globalProductClasses["product-info__price--currency"]
                 }
               >
-                L.E
+                LE
               </span>
             </p>
             <div
               className={`${classes["similar-product__price--old"]} flex-y-container`}
             >
               <p className={globalProductClasses["product-info__old-price"]}>
-                <del>{this.props.product.price} L.E</del>
+                <del>{formatPrice(this.props.product.price)} L.E</del>
               </p>
               <p className={globalProductClasses["product-info__discount"]}>
                 50%

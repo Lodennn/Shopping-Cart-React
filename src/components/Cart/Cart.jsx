@@ -5,6 +5,7 @@ import { ReactComponent as CloseIcon } from "../../images/icon-close.svg";
 import globalProductClasses from "../SingleProduct/GlobalProductStyles.module.scss";
 import CartItem from "./CartItem/CartItem";
 import { isCartEmpty } from "../../helpers/cart";
+import { formatPrice } from "../../helpers/numbers";
 
 class Cart extends React.Component {
   constructor(props) {
@@ -29,7 +30,10 @@ class Cart extends React.Component {
     const totalAmount = this.props.cart.reduce((acc, cur) => {
       return +cur.quantity * +cur.price + acc;
     }, 0);
-    this.setState({ cart: this.props.cart, totalAmount: totalAmount });
+    this.setState({
+      cart: this.props.cart,
+      totalAmount: formatPrice(totalAmount),
+    });
   }
 
   render() {

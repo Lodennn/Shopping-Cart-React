@@ -1,16 +1,17 @@
 import React from "react";
 import classes from "./CartItem.module.scss";
 import globalProductClasses from "../../SingleProduct/GlobalProductStyles.module.scss";
+import { formatPrice } from "../../../helpers/numbers";
 
 class CartItem extends React.Component {
   render() {
     return (
-      <div className={`${classes["cart-item"]} flex-y-container`}>
+      <div className={`${classes["cart-item"]}`}>
         <div className={classes["cart-item__image"]}>
           <img
             src={this.props.cartProduct.image}
             alt="cart img"
-            className="img-fluid"
+            className={`${classes["cart-item__img"]} img-fluid`}
           />
         </div>
         <div className={classes["cart-item__data"]}>
@@ -35,13 +36,13 @@ class CartItem extends React.Component {
             <p
               className={`${globalProductClasses["product-info__price"]} ${classes["cart-item__data--price"]}`}
             >
-              {this.props.cartProduct.price}{" "}
+              {formatPrice(this.props.cartProduct.price)}{" "}
               <span
                 className={
                   globalProductClasses["product-info__price--currency"]
                 }
               >
-                L.E
+                LE
               </span>
             </p>
             <button

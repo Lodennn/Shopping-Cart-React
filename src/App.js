@@ -5,6 +5,7 @@ import Footer from "./components/Layouts/Footer/Footer";
 import SingleProductPage from "./pages/SingleProductPage";
 import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
 import Cart from "./components/Cart/Cart";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 class App extends React.Component {
   constructor(props) {
@@ -98,6 +99,7 @@ class App extends React.Component {
   render() {
     return (
       <Fragment>
+        <ScrollToTop />
         {/** CART COMPONENT */}
         {this.state.showCart && (
           <Cart

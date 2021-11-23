@@ -27,6 +27,7 @@
   &__actions {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
     & > button {
       width: 19.6rem;
       font-weight: 600;

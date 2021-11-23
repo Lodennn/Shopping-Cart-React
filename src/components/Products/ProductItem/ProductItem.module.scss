@@ -71,7 +71,7 @@
   ////////////////////////////////////
   // OVERRIDE THE GLOBAL PRODUCT STYLE
   &__title {
-    font-size: $font-size-xs;
+    font-size: $font-size-xs !important;
     height: 3rem;
     text-overflow: ellipsis;
   }
@@ -80,8 +80,16 @@
   }
   &__price span {
     font-size: $font-size-xs;
+    font-weight: 400;
   }
   &__rate-value {
     font-size: $font-size-xs;
   }
+}
+
+.image-360 {
+  width: 4rem;
+  height: 4rem;
+  top: 0.8rem;
+  left: 0.8rem;
 }

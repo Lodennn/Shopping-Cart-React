@@ -2,16 +2,19 @@
 
 .category-navigation {
   background-color: $color-black;
-  color: $color-white;
   padding-block: 1.4rem;
   &__links {
     justify-content: space-between;
   }
-  &__link {
+  &__item {
     font-size: $font-size-sm;
     font-weight: 600;
-    &--offers {
-      color: $color-accent;
-    }
+  }
+  &__item--offers &__link {
+    color: $color-accent;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-white;
   }
 }
