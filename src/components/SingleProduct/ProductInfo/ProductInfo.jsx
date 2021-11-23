@@ -12,6 +12,8 @@ class ProductInfo extends React.Component {
   constructor(props) {
     super(props);
     this.addProductToCart = this.addProductToCart.bind(this);
+    this.increaseQuantity = this.increaseQuantity.bind(this);
+    this.decreaseQuantity = this.decreaseQuantity.bind(this);
     this.state = {
       productQuantity: 1,
     };
@@ -21,10 +23,25 @@ class ProductInfo extends React.Component {
       this.props.singleProduct,
       +this.state.productQuantity
     );
+    this.setState({ productQuantity: 1 });
   }
-  getProductQuantity(quantity) {
-    this.setState({ productQuantity: quantity });
+
+  increaseQuantity() {
+    this.setState((prevState) => {
+      return {
+        productQuantity: prevState.productQuantity + 1,
+      };
+    });
   }
+  decreaseQuantity() {
+    if (this.state.productQuantity === 1) return 1;
+    this.setState((prevState) => {
+      return {
+        productQuantity: prevState.productQuantity - 1,
+      };
+    });
+  }
+
   render() {
     const { title, price } = this.props.singleProduct;
     return (
@@ -54,7 +71,9 @@ class ProductInfo extends React.Component {
           Quantity
         </h2>
         <ProductQuantity
-          getProductQuantity={this.getProductQuantity.bind(this)}
+          productQuantity={this.state.productQuantity}
+          increaseQuantity={this.increaseQuantity}
+          decreaseQuantity={this.decreaseQuantity}
         />
         {/** PRODUCT CTAs */}
         <div className={classes["product-info__ctas"]}>
