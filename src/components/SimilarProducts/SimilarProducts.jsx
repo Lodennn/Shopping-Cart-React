@@ -11,7 +11,7 @@ class SimilarProducts extends React.Component {
           You may like these products also
         </p>
         {/** SIMILAR PRODUCTS */}
-        <Products />
+        <Products products={this.props.products} />
       </div>
     );
   }

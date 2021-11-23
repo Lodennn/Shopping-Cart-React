@@ -6,11 +6,14 @@
   grid-area: span 1 / span 1;
 
   &__image {
-    background-image: url("../../../images/product-main-image@2x.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 25.4rem;
+    width: 100%;
+    height: 25.4rem;
     position: relative;
+  }
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
   &__data-wrapper {
     display: flex;

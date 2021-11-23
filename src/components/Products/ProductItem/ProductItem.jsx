@@ -5,25 +5,33 @@ import Logo from "../../UI/Logo/CategoryLogo";
 import productImage360 from "../../../images/icon-360.svg";
 import { ReactComponent as StarIcon } from "../../../images/icon-star.svg";
 import { ReactComponent as StarFillIcon } from "../../../images/icon-star-fill.svg";
+import { Link } from "react-router-dom";
 
 class ProductItem extends React.Component {
   render() {
     return (
       <div className={classes["similar-product"]}>
         <div className={classes["similar-product__image"]}>
+          <img
+            src={this.props.product.image}
+            alt="similar product img"
+            className={`${classes["similar-product__img"]} img-fluid`}
+          />
           <div className={`${globalProductClasses["image-360"]}`}>
             <img src={productImage360} alt="360 Img" />
           </div>
         </div>
-        <h2
-          className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </h2>
+        <Link to={`/products/${this.props.product.id}`}>
+          <h2
+            className={`${classes["similar-product__title"]} ${globalProductClasses["product-info__title"]}`}
+          >
+            {this.props.product.title}
+          </h2>
+        </Link>
         <div className={classes["similar-product__data-wrapper"]}>
           <div className={classes["similar-product__price"]}>
             <p className={globalProductClasses["product-info__price"]}>
-              9,999{" "}
+              {this.props.product.price}{" "}
               <span
                 className={
                   globalProductClasses["product-info__price--currency"]
@@ -36,7 +44,7 @@ class ProductItem extends React.Component {
               className={`${classes["similar-product__price--old"]} flex-y-container`}
             >
               <p className={globalProductClasses["product-info__old-price"]}>
-                <del>9,999 L.E</del>
+                <del>{this.props.product.price} L.E</del>
               </p>
               <p className={globalProductClasses["product-info__discount"]}>
                 50%

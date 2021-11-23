@@ -5,6 +5,7 @@ import classes from "./SingleProduct.module.scss";
 
 class Product extends React.Component {
   render() {
+    console.log("SingleProduct: ", this.props);
     return (
       <div className={`${classes["product"]} container`}>
         <ProductImagesPreview />
