@@ -1,10 +1,11 @@
+@import "../../../../styles/Responsive.scss";
+
 .product-main-image {
-  // background-image: url("../../../../images/product-main-image@2x.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   height: 59rem;
   position: relative;
-  // height: 100%;
+  @include respond(phone) {
+    min-height: 59rem;
+  }
 }
 
 .product-main-img {

@@ -1,6 +1,10 @@
 @import "../../../styles/Variables.scss";
+@import "../../../styles/Responsive.scss";
 
 .product-info {
+  @include respond(tab-port) {
+    margin-top: 2rem;
+  }
   &__category {
     color: $color-gray-dark;
     font-size: $font-size-default;
@@ -9,8 +13,15 @@
   &__ctas {
     display: flex;
     margin-top: 2.7rem;
+    @include respond(phone) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
     & > button:first-child {
       margin-right: 3.2rem;
+      @include respond(phone) {
+        margin-right: 0;
+      }
     }
   }
 }

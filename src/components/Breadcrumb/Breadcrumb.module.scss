@@ -1,11 +1,17 @@
 @import "../../styles/Variables.scss";
+@import "../../styles/Responsive.scss";
 
 .breadcrumb {
   color: $color-gray-dark-5;
   font-size: $font-size-default;
   font-weight: 600;
   border: 1px solid $color-gray-dark-3;
+  border-left: none;
+  border-right: none;
   padding-block: 1.7rem;
+  @include respond(tab-port) {
+    // padding-inline: 5rem;
+  }
   &__link {
     margin-right: 2rem;
     position: relative;

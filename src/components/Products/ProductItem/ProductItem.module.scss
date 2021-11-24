@@ -1,4 +1,5 @@
 @import "../../../styles/Variables.scss";
+@import "../../../styles/Responsive.scss";
 
 .similar-product {
   border: 1px solid $color-gray-light-3;
@@ -22,9 +23,26 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 2rem;
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
   }
   &__category-logo {
     transform: translateY(-1rem);
+    @include respond(phone) {
+      margin-top: 0.5rem;
+      align-self: center;
+    }
+    svg {
+      @include respond(phone) {
+        align-self: center;
+        width: 5rem;
+        height: 5rem;
+      }
+    }
   }
   &__price--old {
     display: flex;
@@ -43,6 +61,10 @@
   &__product-rate {
     justify-content: center;
     gap: 2rem;
+    @include respond(phone) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     // OVERRIDE THE GLOBAL PRODUCT STYLE
     & svg {
       width: 1.6rem;
@@ -76,6 +98,9 @@
     font-size: $font-size-xs !important;
     height: 3rem;
     text-overflow: ellipsis;
+    @include respond(phone) {
+      height: 4rem;
+    }
   }
   &__price p {
     font-size: $font-size-md;

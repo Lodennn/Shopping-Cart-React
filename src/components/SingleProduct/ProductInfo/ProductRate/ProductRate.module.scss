@@ -1,9 +1,13 @@
 @import "../../../../styles/Variables.scss";
+@import "../../../../styles/Responsive.scss";
 
 .product-rate {
   justify-content: space-between;
   width: 70%;
   margin-top: 1.5rem;
+  @include respond(phone) {
+    width: auto;
+  }
   &__rate-counter {
     color: $color-gray-dark-3;
     font-size: $font-size-xs-2;

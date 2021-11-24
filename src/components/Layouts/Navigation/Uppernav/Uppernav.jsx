@@ -13,6 +13,25 @@ class Uppernav extends React.Component {
   render() {
     return (
       <div className={`${classes.uppernav}`}>
+        {/** MOB OFFER BAR */}
+        {/** OFFER */}
+        <div
+          className={`${classes["uppernav__offer"]} ${classes["uppernav__offer--mob"]}`}
+        >
+          <span className={`fix-icon`}>
+            <OfferLeftArrow />
+          </span>
+          <p className={classes["uppernav__offer--text"]}>
+            Valentine’s Day Offers! Buy Two Get One Free Shop Now{" "}
+            <Link to="/" className={classes["uppernav__offer--shop"]}>
+              Shop Now
+            </Link>
+          </p>
+          <span className={`fix-icon`}>
+            <OfferRightArrow />
+          </span>
+        </div>
+        {/** MOB OFFER BAR */}
         <div
           className={`${classes["uppernav__container"]} container flex-y-container`}
         >
@@ -26,7 +45,7 @@ class Uppernav extends React.Component {
             </span>
           </div>
           {/** OFFER */}
-          <div className={classes["uppernav__offer"]}>
+          <div className={`${classes["uppernav__offer"]} hidden-md`}>
             <span className={`fix-icon`}>
               <OfferLeftArrow />
             </span>

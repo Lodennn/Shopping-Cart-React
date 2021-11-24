@@ -1,4 +1,5 @@
 @import "../../../../styles/Variables.scss";
+@import "../../../../styles/Responsive.scss";
 
 .uppernav {
   background-color: $color-primary-light;
@@ -6,6 +7,10 @@
   color: $color-black;
   &__container {
     justify-content: space-between;
+    @include respond(phone) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
     & > div,
     & > ul {
       display: flex;
@@ -25,6 +30,16 @@
     &--shop {
       font-weight: 500;
       color: inherit;
+    }
+    &--mob {
+      display: none;
+      @include respond(tab-land) {
+        display: flex !important;
+        justify-content: center;
+        padding: 1rem;
+        background: $color-primary-dark;
+        margin-bottom: 1rem;
+      }
     }
   }
   &__links {

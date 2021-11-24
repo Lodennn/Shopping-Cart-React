@@ -22,7 +22,9 @@ class MainNavigation extends React.Component {
         <Search />
 
         {/** MAIN LOGO */}
-        <Logo type="main" />
+        <div className={classes["main-navigation__category-logo"]}>
+          <Logo type="main" />
+        </div>
 
         {/** LINKS */}
         <ul className={`${classes["main-navigation__links"]} flex-y-container`}>

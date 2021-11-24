@@ -7,9 +7,9 @@ class MainLogo extends React.Component {
     return (
       <div>
         {this.props.type === "main" ? (
-          <HeaderLogo className="fix-logo-header" />
+          <HeaderLogo className="fix-logo-header logo-mob" />
         ) : (
-          <FooterLogo className="fix-logo-footer" />
+          <FooterLogo className="fix-logo-footer logo-mob" />
         )}
       </div>
     );

@@ -1,10 +1,20 @@
 @import "../../../../styles/Variables.scss";
+@import "../../../../styles/Responsive.scss";
 
 .category-navigation {
   background-color: $color-black;
   padding-block: 1.4rem;
+  padding-inline: 2rem;
+  @include respond(tab-port) {
+    overflow-x: scroll;
+    padding-inline: 5rem;
+  }
   &__links {
     justify-content: space-between;
+    @include respond(tab-port) {
+      flex-wrap: wrap;
+      min-width: 110rem;
+    }
   }
   &__item {
     font-size: $font-size-sm;

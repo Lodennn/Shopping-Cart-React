@@ -1,8 +1,12 @@
 @import "../../styles/Variables.scss";
+@import "../../styles/Responsive.scss";
 
 .product {
   padding-block: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 6.4rem;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
 }
