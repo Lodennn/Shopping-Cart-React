@@ -44,5 +44,9 @@
     font-size: $font-size-label;
     width: 8rem;
     margin-right: 0.8rem;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: lighten($color-primary, 10%);
+    }
   }
 }

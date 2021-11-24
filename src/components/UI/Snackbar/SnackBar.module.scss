@@ -11,12 +11,12 @@
   align-items: center;
   padding: 1rem;
   border-radius: 0.4rem;
-  color: $color-gray-dark-5;
-  border-bottom: 0.3rem solid $color-gray-dark-5;
+  color: $color-white;
+  border-bottom: 0.3rem solid darken($color-success, 5%);
   animation: snackbarMove 5s ease forwards;
   z-index: 99999;
   &--success {
-    background-color: $color-gray-light-3;
+    background-color: $color-success;
   }
 
   &__icon {
@@ -29,7 +29,7 @@
     justify-content: center;
     color: $color-white;
     &--success {
-      background-color: $color-gray-dark-3;
+      background-color: darken($color-success, 5%);
     }
   }
   &__message {
