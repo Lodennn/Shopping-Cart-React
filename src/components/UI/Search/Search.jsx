@@ -7,7 +7,7 @@ class Search extends React.Component {
     return (
       <form className={classes["search"]}>
         <span className={classes["search__icon"]}>
-          <SearchIcon />
+          <SearchIcon className="small-mob-svg" />
         </span>
         <input
           type="search"

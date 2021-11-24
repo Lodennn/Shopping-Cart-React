@@ -21,7 +21,7 @@ class Subscribe extends React.Component {
                 Subscribe
               </span>
               <span className={classes["subscribe__submit--icon"]}>
-                <SubmitIcon />
+                <SubmitIcon className="small-mob-svg" />
               </span>
             </button>
           </div>

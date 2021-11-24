@@ -17,7 +17,6 @@ class App extends React.Component {
       isLoading: true,
       showCart: false,
       cart: [],
-      updatedItems: [],
     };
   }
 
@@ -71,7 +70,6 @@ class App extends React.Component {
   }
 
   removeProductFromCart(product) {
-    console.log("REMOVE");
     const updatedProductIndex = this.state.cart.findIndex(
       (cartProduct) => cartProduct.id === product.id
     );

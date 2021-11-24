@@ -41,7 +41,7 @@ class Cart extends React.Component {
       <Modal onHide={this.props.onHide}>
         <div className={classes.cart}>
           <span className={classes["cart__close"]} onClick={this.props.onHide}>
-            <CloseIcon />
+            <CloseIcon className="small-mob-svg" />
           </span>
           <h2 className="title--secondary text-center">My Cart</h2>
           <h4 className={globalProductClasses["product-info__title"]}>

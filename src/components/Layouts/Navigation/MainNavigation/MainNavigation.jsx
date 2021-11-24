@@ -35,7 +35,7 @@ class MainNavigation extends React.Component {
             <span
               className={`${classes["main-navigation__link--icon"]} ${classes["main-navigation__cart-icon"]} icon`}
             >
-              <CartIcon />
+              <CartIcon className="small-mob-svg" />
               <span className={classes["main-navigation__cart-icon--counter"]}>
                 {this.props.cartLength}
               </span>
@@ -48,7 +48,7 @@ class MainNavigation extends React.Component {
             <span
               className={`${classes["main-navigation__link--icon"]} icon fix-icon`}
             >
-              <HeartIcon />
+              <HeartIcon className="small-mob-svg" />
             </span>
             <span className={classes["main-navigation__link--text"]}>
               Wishlist
@@ -58,18 +58,13 @@ class MainNavigation extends React.Component {
             className={`${classes["main-navigation__link"]} flex-y-container`}
           >
             <span className={`${classes["main-navigation__link--icon"]} icon`}>
-              <UserIcon />
+              <UserIcon className="small-mob-svg" />
             </span>
             <span className={classes["main-navigation__link--text"]}>
               Login
             </span>
           </li>
         </ul>
-        {/** CART COMPONENT */}
-        {/* {this.state.showModal && (
-          <Cart onHide={this.hideCartModal.bind(this)} />
-        )} */}
-        {/** CART COMPONENT */}
       </div>
     );
   }

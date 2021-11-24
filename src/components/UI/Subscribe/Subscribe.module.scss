@@ -16,6 +16,7 @@
     }
     &::-webkit-input-placeholder {
       color: $color-secondary;
+      font-size: $font-size-sm;
     }
   }
   &__submit {
@@ -37,6 +38,10 @@
     @include respond(phone) {
       width: auto;
       right: 0;
+    }
+    @include respond(small-phone) {
+      width: auto;
+      right: 1.2rem;
     }
   }
 }

@@ -21,7 +21,7 @@ class ProductQuantity extends React.Component {
             this.props.decreaseQuantity();
           }}
         >
-          <MinusIcon />
+          <MinusIcon className="small-mob-svg" />
         </button>
         <div
           className={`${classes["quantity__value"]} ${animatedClass}`}
@@ -36,7 +36,7 @@ class ProductQuantity extends React.Component {
             this.props.increaseQuantity();
           }}
         >
-          <PlusIcon />
+          <PlusIcon className="small-mob-svg" />
         </button>
       </div>
     );

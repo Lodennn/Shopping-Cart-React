@@ -73,6 +73,9 @@ ul {
 
 .fix-icon {
   transform: translateY(2px);
+  @include respond(small-phone) {
+    transform: translateY(0);
+  }
 }
 
 .flex-y-container {
@@ -238,5 +241,12 @@ ul {
   @include respond(phone) {
     height: 5rem;
     width: 15rem;
+  }
+}
+
+@include respond(small-phone) {
+  .small-mob-svg {
+    width: 3rem;
+    height: 3rem;
   }
 }

@@ -19,7 +19,7 @@ class Uppernav extends React.Component {
           className={`${classes["uppernav__offer"]} ${classes["uppernav__offer--mob"]}`}
         >
           <span className={`fix-icon`}>
-            <OfferLeftArrow />
+            <OfferLeftArrow className="small-mob-svg" />
           </span>
           <p className={classes["uppernav__offer--text"]}>
             Valentine’s Day Offers! Buy Two Get One Free Shop Now{" "}
@@ -28,7 +28,7 @@ class Uppernav extends React.Component {
             </Link>
           </p>
           <span className={`fix-icon`}>
-            <OfferRightArrow />
+            <OfferRightArrow className="small-mob-svg" />
           </span>
         </div>
         {/** MOB OFFER BAR */}
@@ -38,7 +38,7 @@ class Uppernav extends React.Component {
           {/** LOGO */}
           <div className={classes["uppernav__logo"]}>
             <span className={`${classes["uppernav__logo--burger"]} icon`}>
-              <BurgerIcon />
+              <BurgerIcon className="small-mob-svg" />
             </span>
             <span className={`${classes["uppernav__logo--main"]} icon`}>
               <MainLogo type="main" />
@@ -47,7 +47,7 @@ class Uppernav extends React.Component {
           {/** OFFER */}
           <div className={`${classes["uppernav__offer"]} hidden-md`}>
             <span className={`fix-icon`}>
-              <OfferLeftArrow />
+              <OfferLeftArrow className="small-mob-svg" />
             </span>
             <p className={classes["uppernav__offer--text"]}>
               Valentine’s Day Offers! Buy Two Get One Free Shop Now{" "}
@@ -56,7 +56,7 @@ class Uppernav extends React.Component {
               </Link>
             </p>
             <span className={`fix-icon`}>
-              <OfferRightArrow />
+              <OfferRightArrow className="small-mob-svg" />
             </span>
           </div>
           {/** LINKS */}
@@ -66,7 +66,7 @@ class Uppernav extends React.Component {
                 <span
                   className={`${classes["uppernav__link--icon"]} icon fix-icon`}
                 >
-                  <PhoneIcon />
+                  <PhoneIcon className="small-mob-svg" />
                 </span>
                 <span className={classes["uppernav__link--text"]}>
                   Contact Us
@@ -76,7 +76,7 @@ class Uppernav extends React.Component {
             <li className={classes["uppernav__item"]}>
               <Link to="/" className={classes["uppernav__link"]}>
                 <span className={`${classes["uppernav__link--icon"]} icon`}>
-                  <ShoppingCartIcon />
+                  <ShoppingCartIcon className="small-mob-svg" />
                 </span>
                 <span className={classes["uppernav__link--text"]}>
                   Track Order
@@ -88,7 +88,7 @@ class Uppernav extends React.Component {
                 <span
                   className={`${classes["uppernav__link--icon"]} icon fix-icon`}
                 >
-                  <LocationIcon />
+                  <LocationIcon className="small-mob-svg" />
                 </span>
                 <span className={classes["uppernav__link--text"]}>
                   Find A Store
