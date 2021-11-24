@@ -35,11 +35,18 @@ class App extends React.Component {
     this.setState({ showCart: true });
   }
 
+  /**
+   * addProductToCart is a method which takes 2 inputs (product) and (quantity)
+   * and set the state of cart to add new product to it
+   * @param {object} product
+   * @param {number} quantity
+   * @author Khaled Nasser
+   */
   addProductToCart(product, quantity) {
-    if (this.isProductExistsInCart(product)) {
-      this.updateExistedProductInCart(product, quantity);
-    } else {
+    if (!this.isProductExistsInCart(product)) {
       this.addNewProductToCart(product, quantity);
+    } else {
+      this.updateExistedProductInCart(product, quantity);
     }
     this.setState({ snackbarStatus: true });
     setTimeout(() => {
@@ -47,6 +54,14 @@ class App extends React.Component {
     }, 5000);
   }
 
+  /**
+   * isProductExistsInCart is a method which take a cart product and checks if its exists
+   * in cart or not
+   * and set the state of cart to add new product to it
+   * @param {object} cartProduct
+   * @returns boolean
+   * @author Khaled Nasser
+   */
   isProductExistsInCart(cartProduct) {
     const arrayItemIndex = this.state.cart.findIndex(
       (product) => product.id === cartProduct.id
@@ -54,6 +69,27 @@ class App extends React.Component {
     return arrayItemIndex >= 0;
   }
 
+  /**
+   * addNewProductToCart is a method which takes 2 inputs (product) and (quantity)
+   * and push new product to cart array as state array data
+   * @param {object} product
+   * @param {number} quantity
+   * @author Khaled Nasser
+   */
+  addNewProductToCart(product, quantity) {
+    const newCartProduct = { ...product, quantity: quantity };
+    this.setState((prevState) => {
+      return { cart: [newCartProduct, ...prevState.cart] };
+    });
+  }
+
+  /**
+   * updateExistedProductInCart is a method which takes 2 inputs (product) and (quantity)
+   * and update specific object in cart array
+   * @param {object} product
+   * @param {number} quantity
+   * @author Khaled Nasser
+   */
   updateExistedProductInCart(product, quantity) {
     const updatedProductIndex = this.state.cart.findIndex(
       (cartProduct) => cartProduct.id === product.id
@@ -68,13 +104,12 @@ class App extends React.Component {
     this.setState({ cart: updatedCart });
   }
 
-  addNewProductToCart(product, quantity) {
-    const newCartProduct = { ...product, quantity: quantity };
-    this.setState((prevState) => {
-      return { cart: [newCartProduct, ...prevState.cart] };
-    });
-  }
-
+  /**
+   * removeProductFromCart is a method which takes 1 input (product)
+   * and remove the product from the cart array
+   * @param {object} product
+   * @author Khaled Nasser
+   */
   removeProductFromCart(product) {
     const updatedProductIndex = this.state.cart.findIndex(
       (cartProduct) => cartProduct.id === product.id
@@ -98,6 +133,13 @@ class App extends React.Component {
     }
   }
 
+  /**
+   * checkIfLastItem is a method which takes 1 input (product)
+   * and check if the product is the last one of its type or not
+   * @param {object} product
+   * @returns boolean
+   * @author Khaled Nasser
+   */
   checkIfLastItem(product) {
     return product.quantity === 1;
   }
