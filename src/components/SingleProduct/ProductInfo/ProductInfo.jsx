@@ -7,6 +7,7 @@ import ProductSize from "./ProductSize/ProductSize";
 import ProductColor from "./ProductColor/ProductColor";
 import ProductQuantity from "./ProductQuantity/ProductQuantity";
 import globalProductClasses from "../GlobalProductStyles.module.scss";
+import { withRouter } from "react-router";
 
 class ProductInfo extends React.Component {
   constructor(props) {
@@ -18,6 +19,13 @@ class ProductInfo extends React.Component {
       productQuantity: 1,
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location !== prevProps.location) {
+      this.setState({ productQuantity: 1 });
+    }
+  }
+
   addProductToCart() {
     this.props.getAddedProductToCart(
       this.props.singleProduct,
@@ -90,4 +98,4 @@ class ProductInfo extends React.Component {
   }
 }
 
-export default ProductInfo;
+export default withRouter(ProductInfo);
