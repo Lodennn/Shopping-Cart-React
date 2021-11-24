@@ -6,6 +6,7 @@ import SingleProductPage from "./pages/SingleProductPage";
 import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { fetchProductsData } from "./services/api";
+import NotFoundPage from "./pages/PageNotFound";
 // import Cart from "./components/Cart/Cart";
 
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
@@ -136,7 +137,7 @@ class App extends React.Component {
               )}
             </Route>
             <Route path="*">
-              <h1>404 Page</h1>
+              <NotFoundPage />
             </Route>
           </Switch>
           {/** ROUTING */}
