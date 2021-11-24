@@ -5,6 +5,7 @@ import Footer from "./components/Layouts/Footer/Footer";
 import SingleProductPage from "./pages/SingleProductPage";
 import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import { fetchProductsData } from "./services/api";
 // import Cart from "./components/Cart/Cart";
 
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
@@ -21,9 +22,8 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("https://fakestoreapi.com/products");
-    const data = await response.json();
-    this.setState({ data: data, isLoading: false });
+    const productsData = await fetchProductsData();
+    this.setState({ data: productsData, isLoading: false });
   }
 
   hideCartModal() {
@@ -33,7 +33,7 @@ class App extends React.Component {
     this.setState({ showCart: true });
   }
 
-  getAddedProductToCart(product, quantity) {
+  addProductToCart(product, quantity) {
     if (this.isProductExistsInCart(product)) {
       this.updateExistedProductInCart(product, quantity);
     } else {
@@ -129,11 +129,14 @@ class App extends React.Component {
               {this.state.data.length > 0 ? (
                 <SingleProductPage
                   products={this.state.data}
-                  getAddedProductToCart={this.getAddedProductToCart.bind(this)}
+                  getAddedProductToCart={this.addProductToCart.bind(this)}
                 />
               ) : (
                 <LoadingSpinner />
               )}
+            </Route>
+            <Route path="*">
+              <h1>404 Page</h1>
             </Route>
           </Switch>
           {/** ROUTING */}
