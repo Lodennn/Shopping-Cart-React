@@ -7,7 +7,7 @@ import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { fetchProductsData } from "./services/api";
 import NotFoundPage from "./pages/PageNotFound";
-// import Cart from "./components/Cart/Cart";
+import Snackbar from "./components/UI/Snackbar/Snackbar";
 
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
 
@@ -19,6 +19,7 @@ class App extends React.Component {
       isLoading: true,
       showCart: false,
       cart: [],
+      snackbarStatus: false,
     };
   }
 
@@ -40,6 +41,10 @@ class App extends React.Component {
     } else {
       this.addNewProductToCart(product, quantity);
     }
+    this.setState({ snackbarStatus: true });
+    setTimeout(() => {
+      this.setState({ snackbarStatus: false });
+    }, 5000);
   }
 
   isProductExistsInCart(cartProduct) {
@@ -100,6 +105,13 @@ class App extends React.Component {
   render() {
     return (
       <Fragment>
+        {this.state.snackbarStatus && (
+          <Snackbar
+            status={this.state.snackbarStatus}
+            type="success"
+            message="Product Added Successfully"
+          />
+        )}
         <ScrollToTop />
         <Suspense fallback={<LoadingSpinner />}>
           {/** CART COMPONENT */}

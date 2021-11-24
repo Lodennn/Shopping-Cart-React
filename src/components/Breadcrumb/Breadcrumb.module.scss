@@ -9,9 +9,6 @@
   border-left: none;
   border-right: none;
   padding-block: 1.7rem;
-  @include respond(tab-port) {
-    // padding-inline: 5rem;
-  }
   &__link {
     margin-right: 2rem;
     position: relative;
@@ -24,6 +21,9 @@
     }
     & > a {
       color: $color-gray-dark-5;
+    }
+    &--active {
+      transform: translateY(0.1rem);
     }
   }
 }

@@ -10,29 +10,29 @@ class ProductRate extends React.Component {
         <ul className={globalProductClasses["product-info__stars"]}>
           <li className={globalProductClasses["product-info__stars--star"]}>
             <span className="icon">
-              <StarFillIcon />
+              <StarFillIcon className="small-mob-svg" />
             </span>
           </li>
           <li className={globalProductClasses["product-info__stars--star"]}>
             <span className="icon">
-              <StarFillIcon />
+              <StarFillIcon className="small-mob-svg" />
             </span>
           </li>
           <li className={globalProductClasses["product-info__stars--star"]}>
             <span className="icon">
-              <StarFillIcon />
+              <StarFillIcon className="small-mob-svg" />
             </span>
           </li>
           <li className={globalProductClasses["product-info__stars--star"]}>
             <span className="icon">
-              <StarFillIcon />
+              <StarFillIcon className="small-mob-svg" />
             </span>
           </li>
           <li
             className={`${globalProductClasses["product-info__stars--star"]} ${globalProductClasses["product-info__stars--star-active"]}`}
           >
             <span className="icon">
-              <StarIcon />
+              <StarIcon className="small-mob-svg" />
             </span>
           </li>
         </ul>
