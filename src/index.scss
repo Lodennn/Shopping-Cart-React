@@ -19,9 +19,9 @@ html {
   @include respond(phone) {
     font-size: 37.5%; // 1rem = 6px
   }
-  @include respond(small-phone) {
-    font-size: 25%; // 1rem = 4px
-  }
+  // @include respond(small-phone) {
+  //   font-size: 25%; // 1rem = 4px
+  // }
   @include respond(big-screen) {
     font-size: 75%; // 1rem = 12px
   }
@@ -35,9 +35,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   font-weight: 400;
-  @include respond(small-phone) {
-    background-color: #000;
-  }
 }
 
 code {
