@@ -19,9 +19,6 @@ html {
   @include respond(phone) {
     font-size: 37.5%; // 1rem = 6px
   }
-  // @include respond(small-phone) {
-  //   font-size: 25%; // 1rem = 4px
-  // }
   @include respond(big-screen) {
     font-size: 75%; // 1rem = 12px
   }
@@ -100,7 +97,7 @@ ul {
 
 .product-info--wrapper {
   width: 70%;
-  @include respond(phone) {
+  @include respond(small-phone) {
     width: auto;
   }
 }

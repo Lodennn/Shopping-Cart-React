@@ -9,6 +9,7 @@ import { fetchProductsData } from "./services/api";
 import NotFoundPage from "./pages/PageNotFound";
 import Snackbar from "./components/UI/Snackbar/Snackbar";
 
+// LAZY LOADING CART COMPONENT
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
 
 class App extends React.Component {
@@ -116,7 +117,7 @@ class App extends React.Component {
     );
     const updatedCart = [...this.state.cart];
 
-    if (this.checkIfLastItem(updatedCart[updatedProductIndex])) {
+    if (this.isLastItemInCart(updatedCart[updatedProductIndex])) {
       this.setState((prevState) => {
         return {
           cart: prevState.cart.filter(
@@ -134,19 +135,22 @@ class App extends React.Component {
   }
 
   /**
-   * checkIfLastItem is a method which takes 1 input (product)
-   * and check if the product is the last one of its type or not
+   * isLastItemInCart is a method which takes 1 input (product)
+   * and check if this product is the last one of its type or not
    * @param {object} product
    * @returns boolean
    * @author Khaled Nasser
    */
-  checkIfLastItem(product) {
+  isLastItemInCart(product) {
     return product.quantity === 1;
   }
 
   render() {
     return (
       <Fragment>
+        {/** Scroll To Top For Every URL Change */}
+        <ScrollToTop />
+
         {this.state.snackbarStatus && (
           <Snackbar
             status={this.state.snackbarStatus}
@@ -154,7 +158,6 @@ class App extends React.Component {
             message="Product Added Successfully"
           />
         )}
-        <ScrollToTop />
         <Suspense fallback={<LoadingSpinner />}>
           {/** CART COMPONENT */}
           {this.state.showCart && (

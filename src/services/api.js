@@ -1,3 +1,5 @@
+/// https://fakestoreapi.com/
+
 /**
  * fetchProductData is a async function that makes an api call to server
  * @returns array of data(products)
