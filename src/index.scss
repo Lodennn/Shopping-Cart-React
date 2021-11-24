@@ -42,15 +42,42 @@ code {
     monospace;
 }
 
+////////////////////////////////////////////
+// GLOBAL CONFIGURATION
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.1rem;
+  height: 0.7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color-gray-light-5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-secondary;
+  border-radius: 10rem;
+  padding: 0.2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($color-secondary, 10);
+}
 ::selection {
   background-color: $color-primary;
   color: $color-white;
 }
 
-//////////////////////
-// GLOBALS
-//////////////////////
+ul {
+  list-style: none;
+}
 
+////////////////////////////////////////////
+// CONTAINERS CLASSES
 .container {
   max-width: 124rem;
   margin: 0 auto;
@@ -62,40 +89,13 @@ code {
     max-width: 75rem;
   }
   @include respond(small-phone) {
-    // max-width: 75rem;
     padding: 0 2rem;
-  }
-}
-
-ul {
-  list-style: none;
-}
-
-.fix-icon {
-  transform: translateY(2px);
-  @include respond(small-phone) {
-    transform: translateY(0);
   }
 }
 
 .flex-y-container {
   display: flex;
   align-items: center;
-}
-
-.img-fluid {
-  max-width: 100%;
-}
-
-.separator {
-  border: none;
-  margin-top: 2rem;
-  &--light {
-    border-bottom: 1px solid $color-gray-light-3;
-  }
-  &--dark {
-    border-bottom: 1px solid $color-gray-dark-3;
-  }
 }
 
 .product-info--wrapper {
@@ -105,24 +105,18 @@ ul {
   }
 }
 
-.btn {
-  width: 25.2rem;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: $font-size-default;
-  border-radius: 100rem;
-  border: none;
-  font-family: $font-family-primary;
-  cursor: pointer;
-  &--primary {
-    color: $color-black;
-    background-color: $color-primary;
+////////////////////////////////////////////
+// UTILITES CLASSES
+
+.fix-icon {
+  transform: translateY(2px);
+  @include respond(small-phone) {
+    transform: translateY(0);
   }
-  &--secondary {
-    color: $color-white;
-    background-color: $color-secondary;
-  }
+}
+
+.img-fluid {
+  max-width: 100%;
 }
 
 .fix-logo-header {
@@ -158,11 +152,6 @@ ul {
   width: 100%;
 }
 
-.copyright {
-  font-size: $font-size-default;
-  font-weight: 300;
-}
-
 .title--secondary {
   color: $color-secondary;
   font-size: $font-size-lg;
@@ -173,34 +162,51 @@ ul {
   text-align: center;
 }
 
+////////////////////////////////////////////
+// COMPONENETS CLASSES
+.separator {
+  border: none;
+  margin-top: 2rem;
+  &--light {
+    border-bottom: 1px solid $color-gray-light-3;
+  }
+  &--dark {
+    border-bottom: 1px solid $color-gray-dark-3;
+  }
+}
+
+.btn {
+  width: 25.2rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: $font-size-default;
+  border-radius: 100rem;
+  border: none;
+  font-family: $font-family-primary;
+  cursor: pointer;
+  &--primary {
+    color: $color-black;
+    background-color: $color-primary;
+  }
+  &--secondary {
+    color: $color-white;
+    background-color: $color-secondary;
+  }
+}
+
+.copyright {
+  font-size: $font-size-default;
+  font-weight: 300;
+}
+
 .not-found-page {
   text-align: center;
   margin: 5rem 0;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 0.1rem;
-  height: 0.7rem;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $color-gray-light-5;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $color-secondary;
-  border-radius: 10rem;
-  padding: 0.2rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: lighten($color-secondary, 10);
-}
-
+////////////////////////////////////////////
+// RESPONSIVE CLASSES
 .hidden-xs {
   @include respond(phone) {
     display: none !important;
